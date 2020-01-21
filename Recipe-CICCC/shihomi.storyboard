@@ -18,7 +18,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <color key="sectionIndexColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="creatorsProfie" rowHeight="135" id="Els-cO-nuF" customClass="profieTableViewCell" customModule="Recipe_CICCC" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="creatorsProfie" rowHeight="135" id="Els-cO-nuF" customClass="creatorCellRecpipeTableViewCell">
                                 <rect key="frame" x="0.0" y="28" width="414" height="135"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Els-cO-nuF" id="MHy-aF-AEw">
@@ -39,12 +39,13 @@
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjn-db-GgP">
                                             <rect key="frame" x="163" y="56" width="200" height="55"/>
+                                            <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="200" id="eTx-ZN-dwk"/>
                                                 <constraint firstAttribute="height" constant="55" id="fMj-Pb-DUU"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                            <state key="normal" title="Follow me!" backgroundImage="Rectangle 1">
+                                            <state key="normal" title="Follow me!">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
@@ -67,7 +68,7 @@
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.76862745099999996" blue="0.44471580798219179" alpha="0.30233304794520549" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="creatorNameLabel" destination="zyz-Rb-GCp" id="1Au-tY-RdJ"/>
-                                    <outlet property="imgView" destination="qu2-1c-H0U" id="Z7n-ey-mJ7"/>
+                                    <outlet property="imgCreator" destination="qu2-1c-H0U" id="eJz-pk-jcU"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="number" id="Feu-gp-ufH" customClass="NumOfCreatorhasTableViewCell" customModule="Recipe_CICCC" customModuleProvider="target">
@@ -116,7 +117,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lNW-WC-05J">
-                                            <rect key="frame" x="20" y="11" width="374" height="413"/>
+                                            <rect key="frame" x="0.0" y="11" width="414" height="413"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="1" minimumInteritemSpacing="1" id="ayT-kY-sYF">
                                                 <size key="itemSize" width="150" height="150"/>
@@ -150,9 +151,9 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="lNW-WC-05J" secondAttribute="bottom" id="CRq-Gl-zNQ"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="lNW-WC-05J" secondAttribute="trailing" id="HXD-HH-rUq"/>
+                                        <constraint firstAttribute="trailing" secondItem="lNW-WC-05J" secondAttribute="trailing" id="LSc-E3-eDG"/>
                                         <constraint firstItem="lNW-WC-05J" firstAttribute="top" secondItem="bHW-qq-6mk" secondAttribute="topMargin" id="aag-QS-B3b"/>
-                                        <constraint firstItem="lNW-WC-05J" firstAttribute="leading" secondItem="bHW-qq-6mk" secondAttribute="leadingMargin" id="mRd-DA-cs3"/>
+                                        <constraint firstItem="lNW-WC-05J" firstAttribute="leading" secondItem="bHW-qq-6mk" secondAttribute="leading" id="seh-XR-q9Y"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

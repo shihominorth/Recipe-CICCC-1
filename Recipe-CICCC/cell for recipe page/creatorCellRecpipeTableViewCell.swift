@@ -13,7 +13,8 @@ class creatorCellRecpipeTableViewCell: UITableViewCell {
     let numOfCreatorhasTableViewCell = NumOfCreatorhasTableViewCell()
 
     @IBOutlet weak var creatorNameLabel: UILabel!
-    @IBOutlet weak var imgCreator: UIButton!
+    // this line connnect somewhere else except imageview
+    @IBOutlet weak var imgCreator: UIImageView!
     
     
     @IBAction func followerAdding(_ sender: Any) {

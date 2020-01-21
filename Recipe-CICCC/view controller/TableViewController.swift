@@ -69,14 +69,16 @@ class TableViewController: UITableViewController {
         
         if indexPath.section == 0 {
             
-                let cell = (tableView.dequeueReusableCell(withIdentifier: "creatorsProfie") as? profieTableViewCell)!
-                
-                cell.imgView.image = UIImage(named: "download (1)")
-                cell.imgView.layer.masksToBounds = false
-                cell.imgView.layer.cornerRadius = cell.imgView.bounds.width / 2
-                cell.imgView.clipsToBounds = true
-
-                return cell
+            let cell = (tableView.dequeueReusableCell(withIdentifier: "creatorsProfie") as? profieTableViewCell)!
+            
+            cell.imgView.image = UIImage(named: "download (1)")
+            cell.imgView.layer.masksToBounds = false
+            cell.imgView.layer.cornerRadius = cell.imgView.bounds.width / 2
+            cell.imgView.clipsToBounds = true
+            
+            cell.
+            
+            return cell
         }
         else if indexPath.section == 1 {
              let cell = (tableView.dequeueReusableCell(withIdentifier: "number") as? NumOfCreatorhasTableViewCell)!
