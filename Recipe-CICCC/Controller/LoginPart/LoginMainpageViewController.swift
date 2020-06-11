@@ -526,27 +526,26 @@ extension LoginMainpageViewController: GIDSignInDelegate {
     
     //MARK: Google login
     func setUpGoogleLogin() {
-        //        let authorizationButton = GIDSignInButton()
-        //        let googleLoginButton = UIButton(type: .custom)
+     
         googleLoginButton.addTarget(self, action: #selector(googleLogin), for: .touchUpInside)
         
         
-        
+        var image = #imageLiteral(resourceName: "icons8-google-48")
+        image = image.resizedImage(Size: CGSize(width: 20.0, height: 20.0))!
+        googleLoginButton.setImage(image, for: .normal)
         
         googleLoginButton.layer.cornerRadius = 10
-        googleLoginButton.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         googleLoginButton.layer.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        googleLoginButton.layer.borderWidth = 1
         googleLoginButton.titleLabel?.font = UIFont(name: "Helvetica-Bold", size: 20.0)
         
         googleLoginButton.titleLabel?.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         
         googleLoginButton.setTitle(" Google ", for: .normal)
         
-        let widthAnchorImageView = googleLoginButton.imageView?.widthAnchor.constraint(equalToConstant: 28.0)
-        let heightAnchor = googleLoginButton.imageView?.heightAnchor.constraint(equalToConstant: 28.0)
+        let widthAnchorImageView = googleLoginButton.imageView?.widthAnchor.constraint(equalToConstant: 10.0)//28.0)
+        let heightAnchor = googleLoginButton.imageView?.heightAnchor.constraint(equalToConstant: 10.0)
         
-        //               widthAnchor!.isActive = true
+        widthAnchorImageView?.isActive = true
         heightAnchor?.isActive = true
         
         let superViewCenterYAnchor = self.view.centerXAnchor
@@ -653,18 +652,6 @@ extension LoginMainpageViewController: GIDSignInDelegate {
     
 }
 
-//extension FBLoginButton {
-//  /**
-//   Create a new `LoginButton` with a given optional frame and read permissions.
-//   - Parameter frame: Optional frame to initialize with. Default: `nil`, which uses a default size for the button.
-//   - Parameter permissions: Array of read permissions to request when logging in.
-//   */
-//  convenience init(frame: CGRect = .zero, permissions: [Permission] = [.publicProfile]) {
-//    self.init(frame: frame)
-//    self.permissions = permissions.map { $0.name }
-//  }
-//}
-
 extension LoginMainpageViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -709,5 +696,19 @@ extension UIImage {
     func scaleImage(scaleSize:CGFloat)->UIImage {
         let reSize = CGSize(width: self.size.width * scaleSize, height: self.size.height * scaleSize)
         return reSizeImage(reSize: reSize)
+    }
+}
+
+extension UIImage
+{
+    func resizedImage(Size sizeImage: CGSize) -> UIImage?
+    {
+        let frame = CGRect(origin: CGPoint.zero, size: CGSize(width: sizeImage.width, height: sizeImage.height))
+        UIGraphicsBeginImageContextWithOptions(frame.size, false, 0)
+        self.draw(in: frame)
+        let resizedImage: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.withRenderingMode(.alwaysOriginal)
+        return resizedImage
     }
 }

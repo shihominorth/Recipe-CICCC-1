@@ -74,7 +74,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="jxs-J4-geN">
-                                        <rect key="frame" x="122" y="342" width="170" height="95.5"/>
+                                        <rect key="frame" x="122" y="342" width="170" height="81.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Iz-Wg-71u">
                                                 <rect key="frame" x="0.0" y="0.0" width="170" height="20.5"/>
@@ -85,8 +85,8 @@
                                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4j2-d8-HO6">
-                                                <rect key="frame" x="0.0" y="47.5" width="170" height="48"/>
-                                                <state key="normal" title="Google" image="icons8-google-48">
+                                                <rect key="frame" x="0.0" y="47.5" width="170" height="34"/>
+                                                <state key="normal" title="Google">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
@@ -96,7 +96,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KTU-jZ-19A">
-                                        <rect key="frame" x="70" y="467.5" width="274" height="60"/>
+                                        <rect key="frame" x="70" y="453.5" width="274" height="60"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0eT-yy-wEa">
                                                 <rect key="frame" x="0.0" y="0.0" width="165" height="60"/>
@@ -754,7 +754,6 @@
     </scenes>
     <resources>
         <image name="Image-1" width="324" height="324"/>
-        <image name="icons8-google-48" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="YfG-A9-r9C"/>

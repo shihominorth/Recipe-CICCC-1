@@ -35,7 +35,6 @@ pod 'FBSDKLoginKit'
 pod 'GoogleMaps'
 pod 'GooglePlaces'
 
-pod 'SideMenu'
 
 # edit image 
 pod 'RSKImageCropper'
@@ -51,6 +50,4 @@ pod 'Firebase/Messaging'
 pod 'Fabric', '~> 1.10.2'
 pod 'Crashlytics', '~> 3.14.0'
 
-# (Recommended) Pod for Google Analytics
-pod 'Firebase/Analytics'
 end
