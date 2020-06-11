@@ -256,15 +256,7 @@ extension LoginMainpageViewController: LoginButtonDelegate {
                 print("Login　Cancel")
                 
             } else {
-                //                     let fbLoginManager = LoginManager()
-                //                            fbLoginManager.logIn(permissions: ["public_profile", "email"], from: self) {(
-                //                                Result, Error) in
-                //                guard let accessToken = AccessToken.current
-                //                    else {
-                //                        print("Failed to get access token")
-                //                        return
-                //                }
-                //
+             
                 let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
                 
                 Auth.auth().signIn(with: credential) { (result, error) in
@@ -337,20 +329,6 @@ extension LoginMainpageViewController: ASAuthorizationControllerDelegate {
     //MARK: Apple login
     
     func setUpSignInAppleButton() {
-        
-//        let appleLoginButton = UIButton(type: .custom)
-//        appleLoginButton.addTarget(self, action: #selector(handleAppleIdRequest), for: .touchUpInside)
-//        appleLoginButton.layer.cornerRadius = 10
-//        appleLoginButton.layer.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-//        appleLoginButton.tintColor = .black
-        
-//        let image = #imageLiteral(resourceName: "apple-24")
-//        appleLoginButton.setImage(image, for: .normal)
-//
-//        appleLoginButton.setTitle(" Apple ", for: .normal)
-//        appleLoginButton.titleLabel?.font = UIFont(name: "Helvetica-Bold", size: 20.0)
-//        appleLoginButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
-//        appleLoginButton.frame.size.height = 25.0
         let appleLoginButton = ASAuthorizationAppleIDButton()
 
         
@@ -530,13 +508,12 @@ extension LoginMainpageViewController: GIDSignInDelegate {
         //        let googleLoginButton = UIButton(type: .custom)
         googleLoginButton.addTarget(self, action: #selector(googleLogin), for: .touchUpInside)
         
-        
-        
+        var image = #imageLiteral(resourceName: "icons8-google-48")
+        image = image.resizedImage(Size: CGSize(width: 28.0, height: 28.0))!
+        googleLoginButton.setImage(image, for: .normal)
         
         googleLoginButton.layer.cornerRadius = 10
-        googleLoginButton.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         googleLoginButton.layer.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        googleLoginButton.layer.borderWidth = 1
         googleLoginButton.titleLabel?.font = UIFont(name: "Helvetica-Bold", size: 20.0)
         
         googleLoginButton.titleLabel?.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
@@ -709,5 +686,19 @@ extension UIImage {
     func scaleImage(scaleSize:CGFloat)->UIImage {
         let reSize = CGSize(width: self.size.width * scaleSize, height: self.size.height * scaleSize)
         return reSizeImage(reSize: reSize)
+    }
+}
+
+  extension UIImage
+{
+    func resizedImage(Size sizeImage: CGSize) -> UIImage?
+    {
+        let frame = CGRect(origin: CGPoint.zero, size: CGSize(width: sizeImage.width, height: sizeImage.height))
+        UIGraphicsBeginImageContextWithOptions(frame.size, false, 0)
+        self.draw(in: frame)
+        let resizedImage: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.withRenderingMode(.alwaysOriginal)
+        return resizedImage
     }
 }
